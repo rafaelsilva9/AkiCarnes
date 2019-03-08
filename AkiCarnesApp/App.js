@@ -3,6 +3,7 @@ import { Button, View, Text } from "react-native";
 import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 import LogoTitle from './src/shared/LogoTitle';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Chart from './Chart';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -10,15 +11,7 @@ class HomeScreen extends React.Component {
   };
 
   render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
+    return <Chart />
   }
 }
 
@@ -28,9 +21,14 @@ class DetailsScreen extends React.Component {
   };
 
   render() {
+
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Details Screen</Text>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details</Text>
+        <Button
+          title="Go to Home"
+          onPress={() => this.props.navigation.navigate('Home')}
+        />
       </View>
     );
   }
